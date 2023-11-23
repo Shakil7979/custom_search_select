@@ -32,7 +32,7 @@ $(document).ready(function () {
         }
     });
  
-    var lastSearchTerm = '';
+    var selectedResultIndex = -1;
 
     $(document).on('keyup', '#sk_input_search', function() {
         var searchTerm = $(this).val();
@@ -54,7 +54,8 @@ $(document).ready(function () {
       
             if (filteredData.length > 0) { 
                 var resultHtml = '';
-                filteredData.forEach(function(item) { 
+                filteredData.forEach(function(item, index) { 
+                    var isSelected = index === selectedResultIndex ? 'selected' : '';
                     resultHtml  += (`<a href="#" class="data_list" data_id="`+ item.id + `" em_name="`+ item.name + `">
                                                 <ul class="item">
                                                     <li><p>`+ item.id + `</p></li>
@@ -75,6 +76,33 @@ $(document).ready(function () {
           }
         });
       }); 
+
+      
+    $(document).on('keydown', '.sk_append_data', function(e) {
+        var results = $('.sk_append_data');
+        if (results.length === 0) {
+        return;
+        }
+
+        switch(e.key) {
+        case 'ArrowUp':
+            e.preventDefault();
+            selectedResultIndex = (selectedResultIndex - 1 + results.length) % results.length;
+            updateSelectedResult();
+            break;
+        case 'ArrowDown':
+            e.preventDefault();
+            selectedResultIndex = (selectedResultIndex + 1) % results.length;
+            updateSelectedResult();
+            break;
+        }
+    });
+
+    function updateSelectedResult() {
+        var results = $('.sk_append_data .data_list');
+        results.removeClass('selected');
+        results.eq(selectedResultIndex).addClass('selected');
+    }
 
 });
 

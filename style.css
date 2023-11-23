@@ -1,0 +1,117 @@
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #283562;
+  overflow: hidden;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+} 
+/*********************************/
+/*********** Select CSS**********/
+/********************************/
+
+.sk_select {
+  width: 60%;
+  margin: 50px auto;
+}
+.sk_select option {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#sel {
+  width: 88%;
+  margin: 50px auto;
+}
+
+.item p {
+  padding: 5px 0;
+  margin: 0;
+}
+
+.item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sk_dropdown_box > a {
+  padding: 10px 50px;
+  text-decoration: none;
+  border: 1px solid #000; 
+  margin: 25px 0 0 0;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.sk_dorpdoen {
+  width: 10%;
+}
+
+.sk_dorpdoen {
+	width: 100%;
+	border: 1px solid #ddd; 
+}
+
+.sk_append_data{ 
+	height: 240px;
+	overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.sk_dorpdoen a {
+  display: block;
+}
+
+.sk_dorpdoen a:hover {
+  background: #ddd;
+}
+.item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sk_dorpdoen {
+  display: none;
+}
+
+.item li {
+  flex: 0 0 25%;
+}
+
+.select_sk_search input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+.sk_dropdown_box {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.not_found {
+	text-align: center;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	height: 100%;
+}
